@@ -3,11 +3,6 @@
 const dummyJokeLine = "init sentence?";
 const dummyJokePunch = "init punchline";
 
-// 1 susikurti html musu app
-
-// 2  pasirasom css
-
-// 3 isitraukiam reikalingus el i js
 const el = {
   cat: document.querySelector(".cat"),
   sentence: document.querySelector(".sentence"),

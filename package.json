@@ -1,0 +1,27 @@
+{
+  "name": "uzd-webpack-prjct",
+  "version": "1.0.0",
+  "description": "dad jokes app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alejupas/webpack_uzd.git"
+  },
+  "keywords": [
+    "dad",
+    "jokes",
+    "app",
+    "js",
+    "nodejs",
+    "webpack"
+  ],
+  "author": "M.K.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alejupas/webpack_uzd/issues"
+  },
+  "homepage": "https://github.com/Alejupas/webpack_uzd#readme"
+}
