@@ -2,29 +2,28 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  mode: "development",
-  devtool: "source-map",
-  devServer: {
-    contentBase: "./dist",
-  },
+  mode: "production",
+  // devtool: "source-map",
   entry: {
     main: path.resolve(__dirname, "./src/index.js"),
   },
   output: {
-    filename: "main.bundle.js",
+    filename: "final.bundle.js",
     path: path.resolve(__dirname, "./dist"),
+    clean: true,
+    assetModuleFilename: "images/[name][ext]",
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: "babel loader",
           options: {
             presets: ["@babel/preset-env"],
           },
@@ -33,6 +32,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "stylas.css",
+    }),
     new HtmlWebpackPlugin({
       title: "VILNIAUS RYTAS",
       template: "src/template.html",
