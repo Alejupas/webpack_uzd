@@ -1,25 +1,8 @@
-"use strict"; // here we go again
-
-const dummyJokeLine = "init sentence?";
-const dummyJokePunch = "init punchline";
-
-const el = {
-  cat: document.querySelector(".cat"),
-  sentence: document.querySelector(".sentence"),
-  punchline: document.querySelector(".punchline"),
-  punchBtn: document.getElementById("punch"),
-  nextJoke: document.getElementById("nextJoke"),
-};
-// 4 paadarom kad uzkrovus psl mes matom savo klausima ir mygtukus
-// paspaudus mygutka "Punch" pasirodo buves pasleptas punchline sakinys
-el.punchBtn.addEventListener("click", punchLineHandler);
-el.nextJoke.addEventListener("click", nextJokeHandler);
-
+"use strict";
 function punchLineHandler() {
   console.log("punch was pressed");
   showPunchLine();
 }
-// 5 paspaudus mygtuka "Next Joke" is naujo matosi tik klausiamasis sakinys;
 function nextJokeHandler() {
   loadJoke();
   hidePunchLine();
@@ -69,4 +52,19 @@ function fillJokesData(joke) {
   el.sentence.innerHTML = joke.setup;
   el.punchline.innerHTML = joke.punchline;
   el.cat.innerHTML = joke.type;
+}
+
+modules.export = {
+  punchLineHandler,
+  nextJokeHandler,
+  showPunchLine,
+  hidePunchLine,
+  init,
+  loadFirstJoke,
+  loadJoke,
+  fillJokesData,
+};
+
+export default function sudetis(a, b) {
+  return a + b;
 }
