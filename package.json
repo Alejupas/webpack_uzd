@@ -4,7 +4,8 @@
   "description": "dad jokes app",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/Alejupas/webpack_uzd#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
     "webpack": "^5.37.1",
     "webpack-cli": "^4.7.0"
   }
