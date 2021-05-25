@@ -34,8 +34,17 @@ module.exports = {
   },
   plugins: [
     new ImageMinimizerPlugin({
-      filename: "images/[name][ext]",
-      plugins: [["mozjpeg", { quality: 70 }]],
+      filename: "images/[name].webp",
+      deleteOriginalAssets: true,
+      minimizerOptions: {
+        plugins: [
+          ["imagemin-webp"],
+          ["svgo"],
+          ["gifsicle"],
+          ["pngquant"],
+          ["mozjpeg", { quality: 50 }],
+        ],
+      },
     }),
     new MiniCssExtractPlugin({
       filename: "style.css",
