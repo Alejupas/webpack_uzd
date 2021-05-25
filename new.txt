@@ -1,32 +1,45 @@
-[3:20 PM] Marius Kuzminskas
 1. pasikuriam nauja projekta prisidedam git + github
 bent vienas modulinis js failas su kazkokiu funkciionalumu + index.js
- like 6
 
-[3:20 PM] Marius Kuzminskas
 2. Inicializuoti npm.
 npm init
- like 5
 
-[3:20 PM] Marius Kuzminskas
 3. Instaliuojam webpack
 npm install webpack webpack-cli --save-dev
- like 5
 
-[3:20 PM] Marius Kuzminskas
 4. git ingonre for node modules ir dist
- like 5
 
-[3:20 PM] Marius Kuzminskas
 5. pridedam webpack configuracijos faila webpack.dev.js
 pakeiciam scripta kad start scriptas paleidzia dev konfiguracija
 "start": "webpack --config webpack.dev.js"
- like 1
 
-[3:21 PM] Marius Kuzminskas
 6. Html generavimo pluginhttps://webpack.js.org/plugins/html-webpack-plugin/
 inicijuojam plugina confige ir nurodom jam naudoti musu template.html
- like 1
-HtmlWebpackPlugin | webpack
-webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
+
+7. CSShttps://webpack.js.org/guides/asset-management/#loading-css
+npm install --save-dev style-loader css-loader
+pridejom taisykle kad .css failam naudoti css loader
+
+8. Babelhttps://webpack.js.org/loaders/babel-loader/
+npm install -D babel-loader @babel/core @babel/preset-env
+
+devtool: "source-map", // galima matyti is kurio failo koks kodas atejo
+
+9. Dev Serverhttps://webpack.js.org/configuration/dev-server/#root
+npm install --save-dev webpack-dev-server
+scripte prirasyti 'serve'
+pasidarom kad 'npm run serve' paleistu localu serveri darbui
+
+
+10. IMGhttps://webpack.js.org/guides/asset-management/#loading-images
+assetModuleFilename: "images/[name][ext]", // nurodom paveiksleliu talpinimo vieta
+
+11. IMG compresshttps://webpack.js.org/plugins/image-minimizer-webpack-plugin/
+npm install image-minimizer-webpack-plugin --save-dev
+npm install imagemin-gifsicle imagemin-mozjpeg imagemin-pngquant imagemin-svgo --save-dev
+new image-minimizer-webpack-plugin()
+su options is documentacijos arba musu pvz
+
+12 pasijunnti MiniCssExtractPlugin 
+
 

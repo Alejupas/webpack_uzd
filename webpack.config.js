@@ -3,16 +3,24 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
+  target: "web",
   devtool: "source-map",
+
   devServer: {
-    contentBase: "./dist",
+    contentBase: path.resolve(__dirname, "dist"),
+    port: 8080,
+    hot: true,
+    watchOptions: {
+      poll: true,
+    },
   },
   entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
+    main: path.join(__dirname, "./src/index.js"),
   },
   output: {
     filename: "main.bundle.js",
     path: path.resolve(__dirname, "./dist"),
+    publicPath: "",
   },
   module: {
     rules: [
@@ -34,8 +42,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "VILNIAUS RYTAS",
       template: "src/template.html",
+      templateParameters: {
+        title: "Here title",
+        mainTitle: "GERA RYTA",
+      },
+      minify: {
+        removeComments: true,
+        collapseWhitespace: false,
+      },
     }),
   ],
 };

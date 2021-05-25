@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jokes</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/app.js" type="module" defer></script>
-  </head>
-  <body>
-    <h1>Dad jokes app</h1>
-
-    <div class="jokes-container">
-      <h4 class="cat">category</h4>
-      <h2 class="sentence">Sakinys</h2>
-      <h2 class="punchline">Punch line</h2>
-      <button id="punch">Punch</button>
-      <button id="nextJoke">Next joke</button>
-    </div>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title%></title>
+        <!-- <script type="modle" defer src="./js/app.js"></script> -->
+        <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    </head>
+    <body>
+        <h1 class="h1"><%= mainTitle%></h1>
+        <div class="input">
+            <input id="inputVal" type="text" placeholder="Kiek straipsniu rodyti?" />
+            <button class="submit">Submitas</button>
+        </div>
+        <div class="app"></div>
+    </body>
 </html>

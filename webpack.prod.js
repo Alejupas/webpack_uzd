@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -32,8 +33,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new ImageMinimizerPlugin({
+      filename: "images/[name][ext]",
+      plugins: [["mozjpeg", { quality: 70 }]],
+    }),
     new MiniCssExtractPlugin({
-      filename: "stylas.css",
+      filename: "style.css",
     }),
     new HtmlWebpackPlugin({
       title: "VILNIAUS RYTAS",
